@@ -96,8 +96,8 @@ Data mode can be turned on with `client.startDataMode([endSequence])` and incomi
 chunks can be received with `'data'`. The end of data mode can be detected by
 `'ready'`.
 
-`endSequence` is a RegExp object or a String for matching the end of the data
-stream. By default it's `"\r\n.\r\n"` which is suitable for SMTP and POP3.
+`endSequence` is a String for matching the end (entire line) of the data stream.
+By default it's `"."` which is suitable for SMTP and POP3.
 
     if(command == "DATA"){
         client.send("End data with <CR><LF>.<CR><LF>");
