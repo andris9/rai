@@ -1,0 +1,28 @@
+{
+    "name": "rai",
+    "description": "Request-Answer-Interface for generating text based command servers (SMTP, POP etc)",
+    "version": "0.1.0",
+    "author" : "Andris Reinman",
+    "maintainers":[
+        {
+            "name":"andris",
+            "email":"andris@node.ee"
+        }
+    ],
+    "repository" : {
+        "type" : "git",
+        "url" : "http://github.com/andris9/rai.git"
+    },
+    "main" : "./index",
+    "licenses" : [
+        {
+            "type": "MIT",
+            "url": "http://github.com/andris9/rai/blob/master/LICENSE"
+        }
+    ],
+    "devDependencies": {
+        "nodeunit": "*"
+    },
+    "engines": ["node >=0.4.0"],
+    "keywords": ["servers", "text-based"]
+}
