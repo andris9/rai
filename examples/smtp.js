@@ -1,4 +1,4 @@
-var RAIServer = require("../index").RAIServer;
+var RAIServer = require("../lib/rai").RAIServer;
 
 var server = new RAIServer({debug: true, timeout:25*1000});
 
