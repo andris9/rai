@@ -4,6 +4,8 @@
 When a client sends something to the server, the first word of the line is
 treated as a command and the rest of the line as binary payload.
 
+[![Build Status](https://secure.travis-ci.org/andris9/rai.png)](http://travis-ci.org/andris9/rai)
+
 In addition to line based commands, there's also a data mode, to transmit
 everygting received. And there's also an option to switch to TLS mode for
 secure connections.
