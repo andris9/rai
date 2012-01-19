@@ -23,7 +23,7 @@
 <span class='line'> 16</span> </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">defaultCredentials</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
 <span class='line'> 17</span> </span><span class="WHIT">    </span><span class="NAME">key</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">fs.readFileSync</span><span class="PUNC">(</span><span class="NAME">__dirname</span><span class="PUNC">+</span><span class="STRN">"/../cert/key.pem"</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
 <span class='line'> 18</span> </span><span class="WHIT">    </span><span class="NAME">cert</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">fs.readFileSync</span><span class="PUNC">(</span><span class="NAME">__dirname</span><span class="PUNC">+</span><span class="STRN">"/../cert/cert.pem"</span><span class="PUNC">)</span><span class="WHIT">
-<span class='line'> 19</span> </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 19</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'> 20</span> 
 <span class='line'> 21</span> </span><span class="COMM">// Expose to the world</span><span class="WHIT">
 <span class='line'> 22</span> </span><span class="NAME">module.exports.RAIServer</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">RAIServer</span><span class="PUNC">;</span><span class="WHIT">
@@ -53,7 +53,7 @@
 <span class='line'> 46</span> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="NAME">RAIServer</span><span class="PUNC">(</span><span class="NAME">options</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
 <span class='line'> 47</span> </span><span class="WHIT">    </span><span class="NAME">EventEmitter.call</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'> 48</span> </span><span class="WHIT">    
-<span class='line'> 49</span>     </span><span class="NAME">this.options</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">options</span><span class="TOKN"> </span><span class="PUNC">||</span><span class="TOKN"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 49</span>     </span><span class="NAME">this.options</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">options</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'> 50</span> </span><span class="WHIT">    
 <span class='line'> 51</span>     </span><span class="NAME">this._createServer</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'> 52</span> </span><span class="PUNC">}</span><span class="WHIT">
@@ -93,7 +93,7 @@
 <span class='line'> 86</span>     </span><span class="PUNC">}</span><span class="WHIT">
 <span class='line'> 87</span> </span><span class="WHIT">    
 <span class='line'> 88</span>     </span><span class="NAME">this._server.listen</span><span class="PUNC">(</span><span class="NAME">this._port</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">this._host</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 89</span> </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 89</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'> 90</span> 
 <span class='line'> 91</span> </span><span class="COMM">/**
 <span class='line'> 92</span>  * &lt;p>Stops the server&lt;/p>
@@ -103,7 +103,7 @@
 <span class='line'> 96</span> </span><span class="NAME">RAIServer.prototype.end</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">callback</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
 <span class='line'> 97</span> </span><span class="WHIT">    </span><span class="NAME">this._server.on</span><span class="PUNC">(</span><span class="STRN">"close"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">callback</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'> 98</span> </span><span class="WHIT">    </span><span class="NAME">this._server.close</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 99</span> </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 99</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>100</span> 
 <span class='line'>101</span> </span><span class="COMM">/**
 <span class='line'>102</span>  * &lt;p>Creates a server with listener callback&lt;/p> 
@@ -111,7 +111,7 @@
 <span class='line'>104</span> </span><span class="NAME">RAIServer.prototype._createServer</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
 <span class='line'>105</span> </span><span class="WHIT">    </span><span class="NAME">this._server</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">netlib.createServer</span><span class="PUNC">(</span><span class="NAME">this._serverListener.bind</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>106</span> </span><span class="WHIT">    </span><span class="NAME">this._server.on</span><span class="PUNC">(</span><span class="STRN">"error"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">this._onError.bind</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>107</span> </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>107</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>108</span> 
 <span class='line'>109</span> </span><span class="COMM">/**
 <span class='line'>110</span>  * &lt;p>Listens for errors&lt;/p>
@@ -122,7 +122,7 @@
 <span class='line'>115</span> </span><span class="WHIT">    </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this._connected</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
 <span class='line'>116</span> </span><span class="WHIT">        </span><span class="NAME">this.emit</span><span class="PUNC">(</span><span class="STRN">"error"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">err</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>117</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>118</span> </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>118</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>119</span> 
 <span class='line'>120</span> </span><span class="COMM">/**
 <span class='line'>121</span>  * &lt;p>Server listener that is run on client connection&lt;/p>
@@ -146,7 +146,7 @@
 <span class='line'>139</span> </span><span class="WHIT">    </span><span class="NAME">socket.on</span><span class="PUNC">(</span><span class="STRN">"close"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">handler._onClose.bind</span><span class="PUNC">(</span><span class="NAME">handler</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>140</span> 
 <span class='line'>141</span> </span><span class="WHIT">    </span><span class="NAME">this.emit</span><span class="PUNC">(</span><span class="STRN">"connection"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">handler</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>142</span> </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>142</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>143</span> 
 <span class='line'>144</span> </span><span class="COMM">/**
 <span class='line'>145</span>  * &lt;p>Creates a instance for interacting with a client (socket)&lt;/p>
@@ -179,7 +179,7 @@
 <span class='line'>172</span> </span><span class="WHIT">    </span><span class="NAME">EventEmitter.call</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>173</span> </span><span class="WHIT">    
 <span class='line'>174</span>     </span><span class="NAME">this.socket</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">socket</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>175</span> </span><span class="WHIT">    </span><span class="NAME">this.options</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">options</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="TOKN"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>175</span> </span><span class="WHIT">    </span><span class="NAME">this.options</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">options</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>176</span> </span><span class="WHIT">    
 <span class='line'>177</span>     </span><span class="NAME">this.remoteAddress</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">socket.remoteAddress</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>178</span> </span><span class="WHIT">    
@@ -200,20 +200,20 @@
 <span class='line'>193</span> </span><span class="NAME">utillib.inherits</span><span class="PUNC">(</span><span class="NAME">RAISocket</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">EventEmitter</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>194</span> 
 <span class='line'>195</span> </span><span class="COMM">/**
-<span class='line'>196</span>  * &lt;p>Sends some data to the client. &lt;code>&lt;CR&gt;&lt;LF&gt; is automatically appended to
+<span class='line'>196</span>  * &lt;p>Sends some data to the client. &lt;code>&lt;CR&gt;&lt;LF&gt;&lt;/code> is automatically appended to
 <span class='line'>197</span>  *    the data&lt;/p>
 <span class='line'>198</span>  * 
 <span class='line'>199</span>  * @param {String|Buffer} data Data to be sent to the client
 <span class='line'>200</span>  */</span><span class="WHIT">
 <span class='line'>201</span> </span><span class="NAME">RAISocket.prototype.send</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">data</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
 <span class='line'>202</span> </span><span class="WHIT">    </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">buffer</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>203</span> </span><span class="WHIT">    </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">data</span><span class="WHIT"> </span><span class="KEYW">instanceof</span><span class="WHIT"> </span><span class="NAME">Buffer</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="TOKN"> </span><span class="PUNC">(</span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">SlowBuffer</span><span class="WHIT"> </span><span class="PUNC">!=</span><span class="WHIT"> </span><span class="STRN">"undefined"</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">data</span><span class="WHIT"> </span><span class="KEYW">instanceof</span><span class="WHIT"> </span><span class="NAME">SlowBuffer</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>203</span> </span><span class="WHIT">    </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">data</span><span class="WHIT"> </span><span class="KEYW">instanceof</span><span class="WHIT"> </span><span class="NAME">Buffer</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">SlowBuffer</span><span class="WHIT"> </span><span class="PUNC">!=</span><span class="WHIT"> </span><span class="STRN">"undefined"</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">data</span><span class="WHIT"> </span><span class="KEYW">instanceof</span><span class="WHIT"> </span><span class="NAME">SlowBuffer</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
 <span class='line'>204</span> </span><span class="WHIT">        </span><span class="NAME">buffer</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Buffer</span><span class="PUNC">(</span><span class="NAME">data.length</span><span class="PUNC">+</span><span class="NUMB">2</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>205</span> </span><span class="WHIT">        </span><span class="NAME">buffer</span><span class="PUNC">[</span><span class="NAME">buffer.length</span><span class="PUNC">-</span><span class="NUMB">2</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NUMB">0xD</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>206</span> </span><span class="WHIT">        </span><span class="NAME">buffer</span><span class="PUNC">[</span><span class="NAME">buffer.length</span><span class="PUNC">-</span><span class="NUMB">1</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NUMB">0xA</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>207</span> </span><span class="WHIT">        </span><span class="NAME">data.copy</span><span class="PUNC">(</span><span class="NAME">buffer</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>208</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="KEYW">else</span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>209</span> </span><span class="WHIT">        </span><span class="NAME">buffer</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Buffer</span><span class="PUNC">(</span><span class="PUNC">(</span><span class="NAME">data</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="TOKN"> </span><span class="STRN">""</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">toString</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">+</span><span class="STRN">"\r\n"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">"binary"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>209</span> </span><span class="WHIT">        </span><span class="NAME">buffer</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Buffer</span><span class="PUNC">(</span><span class="PUNC">(</span><span class="NAME">data</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="STRN">""</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">toString</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">+</span><span class="STRN">"\r\n"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">"binary"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>210</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="WHIT">
 <span class='line'>211</span> </span><span class="WHIT">    
 <span class='line'>212</span>     </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this.options.debug</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
@@ -221,7 +221,7 @@
 <span class='line'>214</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="WHIT">
 <span class='line'>215</span> </span><span class="WHIT">    
 <span class='line'>216</span>     </span><span class="NAME">this.socket.write</span><span class="PUNC">(</span><span class="NAME">buffer</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>217</span> </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>217</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>218</span> 
 <span class='line'>219</span> </span><span class="COMM">/**
 <span class='line'>220</span>  * &lt;p>Instructs the server to be listening for mixed data instead of line based
@@ -237,7 +237,7 @@
 <span class='line'>230</span> </span><span class="WHIT">        </span><span class="NAME">this._endDataModeSequence</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"\r\n"</span><span class="PUNC">+</span><span class="NAME">sequence</span><span class="PUNC">+</span><span class="STRN">"\r\n"</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>231</span> </span><span class="WHIT">        </span><span class="NAME">this._endDataModeSequenceRegEx</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">RegExp</span><span class="PUNC">(</span><span class="STRN">"/\r\n"</span><span class="PUNC">+</span><span class="NAME">sequence</span><span class="PUNC">+</span><span class="STRN">"\r\n|^"</span><span class="PUNC">+</span><span class="NAME">sequence</span><span class="PUNC">+</span><span class="STRN">"\r\n/"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>232</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>233</span> </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>233</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>234</span> 
 <span class='line'>235</span> </span><span class="COMM">/**
 <span class='line'>236</span>  * &lt;p>Instructs the server to upgrade the connection to secure TLS connection&lt;/p>
@@ -294,14 +294,14 @@
 <span class='line'>287</span>     </span><span class="NAME">secure_connector.on</span><span class="PUNC">(</span><span class="STRN">"error"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">err</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
 <span class='line'>288</span> </span><span class="WHIT">        </span><span class="NAME">this._onError</span><span class="PUNC">(</span><span class="NAME">err</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>289</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">bind</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>290</span> </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>290</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>291</span> 
 <span class='line'>292</span> </span><span class="COMM">/**
 <span class='line'>293</span>  * &lt;p>Closes the connection to the client&lt;/p>
 <span class='line'>294</span>  */</span><span class="WHIT">
 <span class='line'>295</span> </span><span class="NAME">RAISocket.prototype.end</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
 <span class='line'>296</span> </span><span class="WHIT">    </span><span class="NAME">this.socket.end</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>297</span> </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>297</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>298</span> 
 <span class='line'>299</span> </span><span class="COMM">/**
 <span class='line'>300</span>  * &lt;p>Called when a chunk of data arrives from the client. If currently in data
@@ -321,7 +321,7 @@
 <span class='line'>314</span>     </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this._dataMode</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
 <span class='line'>315</span> </span><span class="WHIT">        
 <span class='line'>316</span>         </span><span class="NAME">str</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._remainder</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">str</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>317</span> </span><span class="WHIT">        </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">dataEndMatch</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">str.match</span><span class="PUNC">(</span><span class="REGX">/\r\n.*?$/</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>317</span> </span><span class="WHIT">        </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="PUNC">(</span><span class="NAME">dataEndMatch</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">str.match</span><span class="PUNC">(</span><span class="REGX">/\r\n.*?$/</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
 <span class='line'>318</span> </span><span class="WHIT">            </span><span class="COMM">// if theres a line that is not ended, keep it for later</span><span class="WHIT">
 <span class='line'>319</span> </span><span class="WHIT">            </span><span class="NAME">this._remainder</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">str.substr</span><span class="PUNC">(</span><span class="NAME">dataEndMatch.index</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>320</span> </span><span class="WHIT">            </span><span class="NAME">str</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">str.substr</span><span class="PUNC">(</span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">dataEndMatch.index</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
@@ -372,91 +372,89 @@
 <span class='line'>365</span> </span><span class="WHIT">        </span><span class="COMM">// Not in data mode, process as command</span><span class="WHIT">
 <span class='line'>366</span> </span><span class="WHIT">        </span><span class="NAME">this._processData</span><span class="PUNC">(</span><span class="NAME">str</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>367</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>368</span> 
-<span class='line'>369</span> </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>370</span> 
-<span class='line'>371</span> </span><span class="COMM">/**
-<span class='line'>372</span>  * &lt;p>Processed incoming command lines and emits found data as 
-<span class='line'>373</span>  * &lt;code>'command'&lt;/code> with the command name as the first param and the rest
-<span class='line'>374</span>  * of the data as second (Buffer)&lt;/p>
-<span class='line'>375</span>  * 
-<span class='line'>376</span>  * @param {String} str Binary string to be processed
-<span class='line'>377</span>  */</span><span class="WHIT">
-<span class='line'>378</span> </span><span class="NAME">RAISocket.prototype._processData</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">str</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>379</span> </span><span class="WHIT">    </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">str.length</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>380</span> </span><span class="WHIT">        </span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>381</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>382</span> </span><span class="WHIT">    </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">lines</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">this._remainder</span><span class="PUNC">+</span><span class="NAME">str</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">split</span><span class="PUNC">(</span><span class="STRN">"\r\n"</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'>383</span> </span><span class="WHIT">        </span><span class="NAME">match</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">command</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>384</span> </span><span class="WHIT">        
-<span class='line'>385</span>     </span><span class="NAME">this._remainder</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">lines.pop</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>386</span> </span><span class="WHIT">    
-<span class='line'>387</span>     </span><span class="KEYW">for</span><span class="PUNC">(</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">i</span><span class="PUNC">=</span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">len</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">lines.length</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="NAME">i</span><span class="PUNC">&lt;</span><span class="NAME">len</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="NAME">i</span><span class="PUNC">++</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>388</span> </span><span class="WHIT">        </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this._dataMode</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>389</span> </span><span class="WHIT">            </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">match</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">lines</span><span class="PUNC">[</span><span class="NAME">i</span><span class="PUNC">]</span><span class="PUNC">.</span><span class="NAME">match</span><span class="PUNC">(</span><span class="REGX">/\s*[\S]+\s?/</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>390</span> </span><span class="WHIT">                </span><span class="NAME">command</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">match</span><span class="PUNC">[</span><span class="NUMB">0</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="STRN">""</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">trim</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>391</span> </span><span class="WHIT">                </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this.options.debug</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>392</span> </span><span class="WHIT">                    </span><span class="NAME">console.log</span><span class="PUNC">(</span><span class="STRN">"COMMAND:"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">lines</span><span class="PUNC">[</span><span class="NAME">i</span><span class="PUNC">]</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>393</span> </span><span class="WHIT">                </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>394</span> </span><span class="WHIT">                </span><span class="NAME">this.emit</span><span class="PUNC">(</span><span class="STRN">"command"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">command</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Buffer</span><span class="PUNC">(</span><span class="NAME">lines</span><span class="PUNC">[</span><span class="NAME">i</span><span class="PUNC">]</span><span class="PUNC">.</span><span class="NAME">substr</span><span class="PUNC">(</span><span class="NAME">match.index</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">match</span><span class="PUNC">[</span><span class="NUMB">0</span><span class="PUNC">]</span><span class="PUNC">.</span><span class="NAME">length</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">"binary"</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>395</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>396</span> </span><span class="WHIT">        </span><span class="PUNC">}</span><span class="KEYW">else</span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>397</span> </span><span class="WHIT">            </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this._remainder</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>398</span> </span><span class="WHIT">                </span><span class="NAME">this._remainder</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"\r\n"</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>399</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>400</span> </span><span class="WHIT">            </span><span class="NAME">this._onReceiveData</span><span class="PUNC">(</span><span class="NAME">lines.slice</span><span class="PUNC">(</span><span class="NAME">i</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">join</span><span class="PUNC">(</span><span class="STRN">"\r\n"</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>401</span> </span><span class="WHIT">            </span><span class="KEYW">break</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>402</span> </span><span class="WHIT">        </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>403</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>404</span> </span><span class="WHIT">    
-<span class='line'>405</span> </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>406</span> 
-<span class='line'>407</span> </span><span class="COMM">/**
-<span class='line'>408</span>  * &lt;p>Called when the connection is or is going to be ended&lt;/p> 
-<span class='line'>409</span>  */</span><span class="WHIT">
-<span class='line'>410</span> </span><span class="NAME">RAISocket.prototype._destroy</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>411</span> </span><span class="WHIT">    </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this._destroyed</span><span class="PUNC">)</span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>412</span> </span><span class="WHIT">    </span><span class="NAME">this._destroyed</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">true</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>413</span> </span><span class="WHIT">    
-<span class='line'>414</span>     </span><span class="NAME">this.removeAllListeners</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>415</span> </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>416</span> 
-<span class='line'>417</span> </span><span class="COMM">/**
-<span class='line'>418</span>  * &lt;p>Called when the connection is ended. Emits &lt;code>'end'&lt;/code>&lt;/p>
-<span class='line'>419</span>  */</span><span class="WHIT">
-<span class='line'>420</span> </span><span class="NAME">RAISocket.prototype._onEnd</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>421</span> </span><span class="WHIT">    </span><span class="NAME">this.emit</span><span class="PUNC">(</span><span class="STRN">"end"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>422</span> </span><span class="WHIT">    </span><span class="NAME">this._destroy</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>423</span> </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>424</span> 
-<span class='line'>425</span> </span><span class="COMM">/**
-<span class='line'>426</span>  * &lt;p>Called when an error has appeared. Emits &lt;code>'error'&lt;/code> with
-<span class='line'>427</span>  * the error object as a parameter.&lt;/p>
-<span class='line'>428</span>  * 
-<span class='line'>429</span>  * @param {Object} err Error object
-<span class='line'>430</span>  */</span><span class="WHIT">
-<span class='line'>431</span> </span><span class="NAME">RAISocket.prototype._onError</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">err</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>432</span> </span><span class="WHIT">    </span><span class="NAME">this.emit</span><span class="PUNC">(</span><span class="STRN">"error"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">err</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>433</span> </span><span class="WHIT">    </span><span class="NAME">this._destroy</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>434</span> </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>435</span> 
-<span class='line'>436</span> </span><span class="COMM">/**
-<span class='line'>437</span>  * &lt;p>Called when a timeout has occured. Connection will be closed and
-<span class='line'>438</span>  * &lt;code>'timeout'&lt;/code> is emitted.&lt;/p>
-<span class='line'>439</span>  */</span><span class="WHIT">
-<span class='line'>440</span> </span><span class="NAME">RAISocket.prototype._onTimeout</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>441</span> </span><span class="WHIT">    </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this.socket</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="PUNC">!</span><span class="NAME">this.socket.destroyed</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>442</span> </span><span class="WHIT">        </span><span class="NAME">this.socket.end</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>443</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>444</span> </span><span class="WHIT">    </span><span class="NAME">this.emit</span><span class="PUNC">(</span><span class="STRN">"timeout"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>445</span> </span><span class="WHIT">    </span><span class="NAME">this._destroy</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>446</span> </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>447</span> 
-<span class='line'>448</span> </span><span class="COMM">/**
-<span class='line'>449</span>  * &lt;p>Called when the connection is closed&lt;/p>
-<span class='line'>450</span>  * 
-<span class='line'>451</span>  * @param {Boolean} hadError did the connection end because of an error?
-<span class='line'>452</span>  */</span><span class="WHIT">
-<span class='line'>453</span> </span><span class="NAME">RAISocket.prototype._onClose</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">hadError</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>454</span> </span><span class="WHIT">    </span><span class="NAME">this._destroy</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>455</span> </span><span class="PUNC">}</span></pre></body></html>
+<span class='line'>368</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>369</span> 
+<span class='line'>370</span> </span><span class="COMM">/**
+<span class='line'>371</span>  * &lt;p>Processed incoming command lines and emits found data as 
+<span class='line'>372</span>  * &lt;code>'command'&lt;/code> with the command name as the first param and the rest
+<span class='line'>373</span>  * of the data as second (Buffer)&lt;/p>
+<span class='line'>374</span>  * 
+<span class='line'>375</span>  * @param {String} str Binary string to be processed
+<span class='line'>376</span>  */</span><span class="WHIT">
+<span class='line'>377</span> </span><span class="NAME">RAISocket.prototype._processData</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">str</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>378</span> </span><span class="WHIT">    </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">str.length</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>379</span> </span><span class="WHIT">        </span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>380</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>381</span> </span><span class="WHIT">    </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">lines</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">this._remainder</span><span class="PUNC">+</span><span class="NAME">str</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">split</span><span class="PUNC">(</span><span class="STRN">"\r\n"</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>382</span> </span><span class="WHIT">        </span><span class="NAME">match</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">command</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>383</span> </span><span class="WHIT">        
+<span class='line'>384</span>     </span><span class="NAME">this._remainder</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">lines.pop</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>385</span> </span><span class="WHIT">    
+<span class='line'>386</span>     </span><span class="KEYW">for</span><span class="PUNC">(</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">i</span><span class="PUNC">=</span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">len</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">lines.length</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="NAME">i</span><span class="PUNC">&lt;</span><span class="NAME">len</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="NAME">i</span><span class="PUNC">++</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>387</span> </span><span class="WHIT">        </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this._dataMode</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>388</span> </span><span class="WHIT">            </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="PUNC">(</span><span class="NAME">match</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">lines</span><span class="PUNC">[</span><span class="NAME">i</span><span class="PUNC">]</span><span class="PUNC">.</span><span class="NAME">match</span><span class="PUNC">(</span><span class="REGX">/\s*[\S]+\s?/</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>389</span> </span><span class="WHIT">                </span><span class="NAME">command</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">match</span><span class="PUNC">[</span><span class="NUMB">0</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="STRN">""</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">trim</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>390</span> </span><span class="WHIT">                </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this.options.debug</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>391</span> </span><span class="WHIT">                    </span><span class="NAME">console.log</span><span class="PUNC">(</span><span class="STRN">"COMMAND:"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">lines</span><span class="PUNC">[</span><span class="NAME">i</span><span class="PUNC">]</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>392</span> </span><span class="WHIT">                </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>393</span> </span><span class="WHIT">                </span><span class="NAME">this.emit</span><span class="PUNC">(</span><span class="STRN">"command"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">command</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Buffer</span><span class="PUNC">(</span><span class="NAME">lines</span><span class="PUNC">[</span><span class="NAME">i</span><span class="PUNC">]</span><span class="PUNC">.</span><span class="NAME">substr</span><span class="PUNC">(</span><span class="NAME">match.index</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">match</span><span class="PUNC">[</span><span class="NUMB">0</span><span class="PUNC">]</span><span class="PUNC">.</span><span class="NAME">length</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">"binary"</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>394</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>395</span> </span><span class="WHIT">        </span><span class="PUNC">}</span><span class="KEYW">else</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>396</span> </span><span class="WHIT">            </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this._remainder</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>397</span> </span><span class="WHIT">                </span><span class="NAME">this._remainder</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"\r\n"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>398</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>399</span> </span><span class="WHIT">            </span><span class="NAME">this._onReceiveData</span><span class="PUNC">(</span><span class="NAME">lines.slice</span><span class="PUNC">(</span><span class="NAME">i</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">join</span><span class="PUNC">(</span><span class="STRN">"\r\n"</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>400</span> </span><span class="WHIT">            </span><span class="KEYW">break</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>401</span> </span><span class="WHIT">        </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>402</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="WHIT">  
+<span class='line'>403</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>404</span> 
+<span class='line'>405</span> </span><span class="COMM">/**
+<span class='line'>406</span>  * &lt;p>Called when the connection is or is going to be ended&lt;/p> 
+<span class='line'>407</span>  */</span><span class="WHIT">
+<span class='line'>408</span> </span><span class="NAME">RAISocket.prototype._destroy</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>409</span> </span><span class="WHIT">    </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this._destroyed</span><span class="PUNC">)</span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>410</span> </span><span class="WHIT">    </span><span class="NAME">this._destroyed</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">true</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>411</span> </span><span class="WHIT">    
+<span class='line'>412</span>     </span><span class="NAME">this.removeAllListeners</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>413</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>414</span> 
+<span class='line'>415</span> </span><span class="COMM">/**
+<span class='line'>416</span>  * &lt;p>Called when the connection is ended. Emits &lt;code>'end'&lt;/code>&lt;/p>
+<span class='line'>417</span>  */</span><span class="WHIT">
+<span class='line'>418</span> </span><span class="NAME">RAISocket.prototype._onEnd</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>419</span> </span><span class="WHIT">    </span><span class="NAME">this.emit</span><span class="PUNC">(</span><span class="STRN">"end"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>420</span> </span><span class="WHIT">    </span><span class="NAME">this._destroy</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>421</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>422</span> 
+<span class='line'>423</span> </span><span class="COMM">/**
+<span class='line'>424</span>  * &lt;p>Called when an error has appeared. Emits &lt;code>'error'&lt;/code> with
+<span class='line'>425</span>  * the error object as a parameter.&lt;/p>
+<span class='line'>426</span>  * 
+<span class='line'>427</span>  * @param {Object} err Error object
+<span class='line'>428</span>  */</span><span class="WHIT">
+<span class='line'>429</span> </span><span class="NAME">RAISocket.prototype._onError</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">err</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>430</span> </span><span class="WHIT">    </span><span class="NAME">this.emit</span><span class="PUNC">(</span><span class="STRN">"error"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">err</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>431</span> </span><span class="WHIT">    </span><span class="NAME">this._destroy</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>432</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>433</span> 
+<span class='line'>434</span> </span><span class="COMM">/**
+<span class='line'>435</span>  * &lt;p>Called when a timeout has occured. Connection will be closed and
+<span class='line'>436</span>  * &lt;code>'timeout'&lt;/code> is emitted.&lt;/p>
+<span class='line'>437</span>  */</span><span class="WHIT">
+<span class='line'>438</span> </span><span class="NAME">RAISocket.prototype._onTimeout</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>439</span> </span><span class="WHIT">    </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this.socket</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="PUNC">!</span><span class="NAME">this.socket.destroyed</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>440</span> </span><span class="WHIT">        </span><span class="NAME">this.socket.end</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>441</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>442</span> </span><span class="WHIT">    </span><span class="NAME">this.emit</span><span class="PUNC">(</span><span class="STRN">"timeout"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>443</span> </span><span class="WHIT">    </span><span class="NAME">this._destroy</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>444</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>445</span> 
+<span class='line'>446</span> </span><span class="COMM">/**
+<span class='line'>447</span>  * &lt;p>Called when the connection is closed&lt;/p>
+<span class='line'>448</span>  * 
+<span class='line'>449</span>  * @param {Boolean} hadError did the connection end because of an error?
+<span class='line'>450</span>  */</span><span class="WHIT">
+<span class='line'>451</span> </span><span class="NAME">RAISocket.prototype._onClose</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">hadError</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>452</span> </span><span class="WHIT">    </span><span class="NAME">this._destroy</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>453</span> </span><span class="PUNC">}</span><span class="PUNC">;</span></pre></body></html>
