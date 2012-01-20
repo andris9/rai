@@ -398,11 +398,11 @@ exports["Pipelining support"] = {
 
         });
     }
-}
+};
 
 exports["Timeout tests"] = {
     "Timeout": function(test){
-        var server = new RAIServer({timeout: 300});
+        var server = new RAIServer({timeout: 300, disconnectOnTimeout: true});
         test.expect(3);
         server.listen(PORT_NUMBER, function(err){
             
@@ -429,7 +429,7 @@ exports["Timeout tests"] = {
         });
     },
     "Timeout with TLS":  function(test){
-        var server = new RAIServer({timeout: 300});
+        var server = new RAIServer({timeout: 300, disconnectOnTimeout: true});
         server.listen(PORT_NUMBER, function(err){
             
             test.expect(3);
