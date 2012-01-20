@@ -117,6 +117,29 @@ By default it's `"."` which is suitable for SMTP and POP3.
         client.send("Data received");
     });
 
+## Testing
+
+There is a possibility to set up a mockup client which sends a batch of commands
+one by one to the server and returns the last response.
+
+    var runClientMockup = require("rai").runClientMockup;
+    
+    var cmds = ["EHLO FOOBAR", "STARTTLS", "QUIT"];
+    runClientMockup(25, "mail.hot.ee", cmds, function(resp){
+        console.log("Final:", resp.toString("utf-8").trim());
+    });
+
+`runClientMockup` has he following parameters in the following order:
+
+  * **port** - Port number
+  * **host** - Hostname to connect to
+  * **commands** - Command list (an array) to be sent to server
+  * **callback** - Callback function to run on completion
+  * **debug** - if set to true log all input/output
+
+Response from the callback function is a Buffer and contains the
+last data received from the server
+
 ## License
 
 **MIT**
