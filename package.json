@@ -1,7 +1,7 @@
 {
     "name": "rai",
     "description": "Request-Answer-Interface for generating text based command servers (SMTP, POP etc)",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "author" : "Andris Reinman",
     "maintainers":[
         {

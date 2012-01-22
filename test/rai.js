@@ -213,6 +213,66 @@ exports["Secure connection"] = {
             });
 
         });
+    },
+    "STARTTLS clears command buffer":  function(test){
+        var server = new RAIServer();
+        server.listen(PORT_NUMBER, function(err){
+            
+            test.expect(2);
+            
+            server.on("connection", function(socket){
+                
+                socket.on("command", function(command){
+                    if(command == "STARTTLS"){
+                        socket.startTLS();
+                        socket.send("OK");
+                    }else if(command == "KILL"){
+                        test.ok(0, "Should not occur");
+                    }else if(command == "OK"){
+                        test.ok(1, "OK");
+                    }
+                    
+                });
+                
+                socket.on("tls", function(){
+                    test.ok(1, "Secure connection opened");
+                    socket.send("TEST");
+                });
+                
+                socket.on("end", function(){
+                    server.end(function(){
+                        test.done();
+                    });
+                });
+                
+                socket.on("error", function(err){
+                    test.isError(err);
+                });
+            });
+            
+            var client = netlib.connect(PORT_NUMBER, function(){
+                
+                client.write("STARTTLS\r\nKILL\r\n");
+                
+                client.on("data", function(chunk){
+                    if(chunk.toString("utf-8").trim() == "OK"){
+                        var sslcontext = crypto.createCredentials();
+                        var pair = tlslib.createSecurePair(sslcontext, false);
+                        
+                        pair.encrypted.pipe(client);
+                        client.pipe(pair.encrypted);
+                        pair.fd = client.fd;
+                        
+                        pair.on("secure", function(){
+                            pair.cleartext.write("OK\r\n");
+                            pair.cleartext.end();
+                        });
+                    }
+                })
+                
+            });
+
+        });
     }
 };
 
