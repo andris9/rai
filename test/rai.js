@@ -268,7 +268,7 @@ exports["Secure connection"] = {
                             pair.cleartext.end();
                         });
                     }
-                })
+                });
                 
             });
 

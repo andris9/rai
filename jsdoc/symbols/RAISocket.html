@@ -38,9 +38,13 @@
 				
 					<li><a href="../symbols/_global_.html">_global_</a></li>
 				
+					<li><a href="../symbols/mockup.html">mockup</a></li>
+				
 					<li><a href="../symbols/RAIServer.html">RAIServer</a></li>
 				
 					<li><a href="../symbols/RAISocket.html">RAISocket</a></li>
+				
+					<li><a href="../symbols/starttls.html">starttls</a></li>
 				
 			</ul>
 		</nav>
@@ -51,7 +55,7 @@
 			Documentation generator: <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0<br />
 			Template: <a href="http://www.thebrightlines.com/2010/05/06/new-template-for-jsdoctoolkit-codeview/" target="_blank">Codeview</a> 1.2<br />
 			Generated on:
-			<time datetime='2012-0-20' pubdate>2012-0-20 15:51</time>
+			<time datetime='2012-0-22' pubdate>2012-0-22 11:54</time>
 		</footer>
 	</div>
 </div>
@@ -160,61 +164,6 @@
 											>
 												<td class="attributes">&lt;private&gt; &nbsp;</td>
 												<td class="nameDescription">
-													<div class="fixedFont"><b><a href="../symbols/RAISocket.html#_onClose">_onClose</a></b>(hadError)
-													</div>
-													<div class="description"><p>Called when the connection is closed</p></div>
-												</td>
-											</tr>
-										
-											<tr
-												 class='item2'
-											>
-												<td class="attributes">&lt;private&gt; &nbsp;</td>
-												<td class="nameDescription">
-													<div class="fixedFont"><b><a href="../symbols/RAISocket.html#_onEnd">_onEnd</a></b>()
-													</div>
-													<div class="description"><p>Called when the connection is ended.</div>
-												</td>
-											</tr>
-										
-											<tr
-												 class='item3'
-											>
-												<td class="attributes">&lt;private&gt; &nbsp;</td>
-												<td class="nameDescription">
-													<div class="fixedFont"><b><a href="../symbols/RAISocket.html#_onError">_onError</a></b>(err)
-													</div>
-													<div class="description"><p>Called when an error has appeared.</div>
-												</td>
-											</tr>
-										
-											<tr
-												 class='item4'
-											>
-												<td class="attributes">&lt;private&gt; &nbsp;</td>
-												<td class="nameDescription">
-													<div class="fixedFont"><b><a href="../symbols/RAISocket.html#_onReceiveData">_onReceiveData</a></b>(chunk)
-													</div>
-													<div class="description"><p>Called when a chunk of data arrives from the client.</div>
-												</td>
-											</tr>
-										
-											<tr
-												 class='item5'
-											>
-												<td class="attributes">&lt;private&gt; &nbsp;</td>
-												<td class="nameDescription">
-													<div class="fixedFont"><b><a href="../symbols/RAISocket.html#_onTimeout">_onTimeout</a></b>()
-													</div>
-													<div class="description"><p>Called when a timeout has occured.</div>
-												</td>
-											</tr>
-										
-											<tr
-												 class='item6'
-											>
-												<td class="attributes">&lt;private&gt; &nbsp;</td>
-												<td class="nameDescription">
 													<div class="fixedFont"><b><a href="../symbols/RAISocket.html#_processData">_processData</a></b>(str)
 													</div>
 													<div class="description"><p>Processed incoming command lines and emits found data as 
@@ -224,7 +173,7 @@ of the data as second (Buffer)</p></div>
 											</tr>
 										
 											<tr
-												 class='item7'
+												 class='item2'
 											>
 												<td class="attributes">&nbsp;</td>
 												<td class="nameDescription">
@@ -235,7 +184,7 @@ of the data as second (Buffer)</p></div>
 											</tr>
 										
 											<tr
-												 class='item8'
+												 class='item3'
 											>
 												<td class="attributes">&nbsp;</td>
 												<td class="nameDescription">
@@ -246,7 +195,7 @@ of the data as second (Buffer)</p></div>
 											</tr>
 										
 											<tr
-												 class='item9'
+												 class='item4'
 											>
 												<td class="attributes">&nbsp;</td>
 												<td class="nameDescription">
@@ -258,7 +207,7 @@ of the data as second (Buffer)</p></div>
 											</tr>
 										
 											<tr
-												 class='item10'
+												 class='item5'
 											>
 												<td class="attributes">&nbsp;</td>
 												<td class="nameDescription">
@@ -284,6 +233,77 @@ otherwise emits <code>'tls'</code></p></div>
 	<!--
 	#### EVENTS SUMMARY
 	-->
+			
+				
+				<section>
+					
+						<nav>
+							<div class="props">
+								<table class="summaryTable" cellspacing="0" summary="A summary of the events documented in the class RAISocket.">
+									<caption class="sectionTitle">Event Summary</caption>
+									
+									<thead>
+										<tr>
+											<th scope="col">Event Attributes</th>
+											<th scope="col">Event Name and Description</th>
+										</tr>
+									</thead>
+									
+									<tbody>
+										
+											<tr>
+												<td class="attributes">&lt;private&gt; &nbsp;</td>
+												<td class="nameDescription">
+													<div class="fixedFont"><b><a href="../symbols/RAISocket.html#event:_onClose">_onClose</a></b>(hadError)
+													</div>
+													<div class="description"><p>Called when the connection is closed</p></div>
+												</td>
+											</tr>
+										
+											<tr>
+												<td class="attributes">&lt;private&gt; &nbsp;</td>
+												<td class="nameDescription">
+													<div class="fixedFont"><b><a href="../symbols/RAISocket.html#event:_onEnd">_onEnd</a></b>()
+													</div>
+													<div class="description"><p>Called when the connection is ended.</div>
+												</td>
+											</tr>
+										
+											<tr>
+												<td class="attributes">&lt;private&gt; &nbsp;</td>
+												<td class="nameDescription">
+													<div class="fixedFont"><b><a href="../symbols/RAISocket.html#event:_onError">_onError</a></b>(err)
+													</div>
+													<div class="description"><p>Called when an error has appeared.</div>
+												</td>
+											</tr>
+										
+											<tr>
+												<td class="attributes">&lt;private&gt; &nbsp;</td>
+												<td class="nameDescription">
+													<div class="fixedFont"><b><a href="../symbols/RAISocket.html#event:_onReceiveData">_onReceiveData</a></b>(chunk)
+													</div>
+													<div class="description"><p>Called when a chunk of data arrives from the client.</div>
+												</td>
+											</tr>
+										
+											<tr>
+												<td class="attributes">&lt;private&gt; &nbsp;</td>
+												<td class="nameDescription">
+													<div class="fixedFont"><b><a href="../symbols/RAISocket.html#event:_onTimeout">_onTimeout</a></b>()
+													</div>
+													<div class="description"><p>Called when a timeout has occured.</div>
+												</td>
+											</tr>
+										
+									</tbody>
+								</table>
+							</div>
+						</nav>
+					
+					
+					
+				</section>
 			
 	<!--
 	#### CONSTRUCTOR DETAILS
@@ -402,187 +422,6 @@ otherwise emits <code>'tls'</code></p></div>
 									<li 
 										 class='item1'
 									>
-										<div class="fixedFont heading" id="_onClose">
-											<span class='lighter'>
-											&lt;private&gt; 
-											</span>
-											
-											
-											
-											<b>_onClose</b>(hadError)
-										</div>
-										
-										<div class="description">
-											<p>Called when the connection is closed</p>
-											
-											
-											
-											
-										</div>
-										
-										
-										
-										
-											<dl class="detailList params">
-												<dt class="heading">Parameters:</dt>
-												
-													<dt>
-														<span class="light fixedFont">{Boolean}</span> <b>hadError</b>
-														
-													</dt>
-													<dd>did the connection end because of an error?</dd>
-												
-											</dl>
-										
-										
-										
-										<div class="hr"></div>
-									</li>
-								
-									<li 
-										 class='item2'
-									>
-										<div class="fixedFont heading" id="_onEnd">
-											<span class='lighter'>
-											&lt;private&gt; 
-											</span>
-											
-											
-											
-											<b>_onEnd</b>()
-										</div>
-										
-										<div class="description">
-											<p>Called when the connection is ended. Emits <code>'end'</code></p>
-											
-											
-											
-											
-										</div>
-										
-										
-										
-										
-										
-										
-										<div class="hr"></div>
-									</li>
-								
-									<li 
-										 class='item3'
-									>
-										<div class="fixedFont heading" id="_onError">
-											<span class='lighter'>
-											&lt;private&gt; 
-											</span>
-											
-											
-											
-											<b>_onError</b>(err)
-										</div>
-										
-										<div class="description">
-											<p>Called when an error has appeared. Emits <code>'error'</code> with
-the error object as a parameter.</p>
-											
-											
-											
-											
-										</div>
-										
-										
-										
-										
-											<dl class="detailList params">
-												<dt class="heading">Parameters:</dt>
-												
-													<dt>
-														<span class="light fixedFont">{Object}</span> <b>err</b>
-														
-													</dt>
-													<dd>Error object</dd>
-												
-											</dl>
-										
-										
-										
-										<div class="hr"></div>
-									</li>
-								
-									<li 
-										 class='item4'
-									>
-										<div class="fixedFont heading" id="_onReceiveData">
-											<span class='lighter'>
-											&lt;private&gt; 
-											</span>
-											
-											
-											
-											<b>_onReceiveData</b>(chunk)
-										</div>
-										
-										<div class="description">
-											<p>Called when a chunk of data arrives from the client. If currently in data
-mode, transmit the data otherwise send it to <code>_processData</code></p>
-											
-											
-											
-											
-										</div>
-										
-										
-										
-										
-											<dl class="detailList params">
-												<dt class="heading">Parameters:</dt>
-												
-													<dt>
-														<span class="light fixedFont">{Buffer|String}</span> <b>chunk</b>
-														
-													</dt>
-													<dd>Data sent by the client</dd>
-												
-											</dl>
-										
-										
-										
-										<div class="hr"></div>
-									</li>
-								
-									<li 
-										 class='item5'
-									>
-										<div class="fixedFont heading" id="_onTimeout">
-											<span class='lighter'>
-											&lt;private&gt; 
-											</span>
-											
-											
-											
-											<b>_onTimeout</b>()
-										</div>
-										
-										<div class="description">
-											<p>Called when a timeout has occured. Connection will be closed and
-<code>'timeout'</code> is emitted.</p>
-											
-											
-											
-											
-										</div>
-										
-										
-										
-										
-										
-										
-										<div class="hr"></div>
-									</li>
-								
-									<li 
-										 class='item6'
-									>
 										<div class="fixedFont heading" id="_processData">
 											<span class='lighter'>
 											&lt;private&gt; 
@@ -623,7 +462,7 @@ of the data as second (Buffer)</p>
 									</li>
 								
 									<li 
-										 class='item7'
+										 class='item2'
 									>
 										<div class="fixedFont heading" id="end">
 											<span class='lighter'>
@@ -652,7 +491,7 @@ of the data as second (Buffer)</p>
 									</li>
 								
 									<li 
-										 class='item8'
+										 class='item3'
 									>
 										<div class="fixedFont heading" id="send">
 											<span class='lighter'>
@@ -693,7 +532,7 @@ of the data as second (Buffer)</p>
 									</li>
 								
 									<li 
-										 class='item9'
+										 class='item4'
 									>
 										<div class="fixedFont heading" id="startDataMode">
 											<span class='lighter'>
@@ -735,7 +574,7 @@ of the data as second (Buffer)</p>
 									</li>
 								
 									<li 
-										 class='item10'
+										 class='item5'
 									>
 										<div class="fixedFont heading" id="startTLS">
 											<span class='lighter'>
@@ -795,6 +634,184 @@ otherwise emits <code>'tls'</code></p>
 	<!--
 	#### EVENT DETAILS
 	-->		
+			
+				<section>
+					<div class="details props">
+						<div class="innerProps">
+							<h2 class="sectionTitle">
+								Event Detail
+							</h2>
+							
+							
+								<div class="fixedFont heading" id="event:_onClose">
+									<span class='lighter'>
+									&lt;private&gt; 
+									</span>
+									
+									
+									
+									<b>_onClose</b>(hadError)
+								</div>
+								
+								<div class="description">
+									<p>Called when the connection is closed</p>
+									
+									
+									
+									
+								</div>
+								
+								
+								
+								
+									<dl class="detailList params">
+										<dt class="heading">Parameters:</dt>
+										
+											<dt>
+												<span class="light fixedFont">{Boolean}</span> <b>hadError</b>
+												
+											</dt>
+											<dd>did the connection end because of an error?</dd>
+										
+									</dl>
+								
+								
+								
+								
+								<div class="hr"></div>
+							
+								<div class="fixedFont heading" id="event:_onEnd">
+									<span class='lighter'>
+									&lt;private&gt; 
+									</span>
+									
+									
+									
+									<b>_onEnd</b>()
+								</div>
+								
+								<div class="description">
+									<p>Called when the connection is ended. Emits <code>'end'</code></p>
+									
+									
+									
+									
+								</div>
+								
+								
+								
+								
+								
+								
+								
+								<div class="hr"></div>
+							
+								<div class="fixedFont heading" id="event:_onError">
+									<span class='lighter'>
+									&lt;private&gt; 
+									</span>
+									
+									
+									
+									<b>_onError</b>(err)
+								</div>
+								
+								<div class="description">
+									<p>Called when an error has appeared. Emits <code>'error'</code> with
+the error object as a parameter.</p>
+									
+									
+									
+									
+								</div>
+								
+								
+								
+								
+									<dl class="detailList params">
+										<dt class="heading">Parameters:</dt>
+										
+											<dt>
+												<span class="light fixedFont">{Object}</span> <b>err</b>
+												
+											</dt>
+											<dd>Error object</dd>
+										
+									</dl>
+								
+								
+								
+								
+								<div class="hr"></div>
+							
+								<div class="fixedFont heading" id="event:_onReceiveData">
+									<span class='lighter'>
+									&lt;private&gt; 
+									</span>
+									
+									
+									
+									<b>_onReceiveData</b>(chunk)
+								</div>
+								
+								<div class="description">
+									<p>Called when a chunk of data arrives from the client. If currently in data
+mode, transmit the data otherwise send it to <code>_processData</code></p>
+									
+									
+									
+									
+								</div>
+								
+								
+								
+								
+									<dl class="detailList params">
+										<dt class="heading">Parameters:</dt>
+										
+											<dt>
+												<span class="light fixedFont">{Buffer|String}</span> <b>chunk</b>
+												
+											</dt>
+											<dd>Data sent by the client</dd>
+										
+									</dl>
+								
+								
+								
+								
+								<div class="hr"></div>
+							
+								<div class="fixedFont heading" id="event:_onTimeout">
+									<span class='lighter'>
+									&lt;private&gt; 
+									</span>
+									
+									
+									
+									<b>_onTimeout</b>()
+								</div>
+								
+								<div class="description">
+									<p>Called when a timeout has occured. Connection will be closed and
+<code>'timeout'</code> is emitted.</p>
+									
+									
+									
+									
+								</div>
+								
+								
+								
+								
+								
+								
+								
+								
+							
+						</div>
+					</div>
+				</section>
 			
 		</article>
 	</div>
