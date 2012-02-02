@@ -18,6 +18,16 @@ exports["General tests"] = {
             });
         });
     },
+    "Create a secure server": function(test){
+        var server = new RAIServer({secureConnection: true});
+        server.listen(PORT_NUMBER, function(err){
+            test.ifError(err);
+            server.end(function(){
+                test.ok(1, "Server closed");
+                test.done();
+            });
+        });
+    },
     "Duplicate server fails": function(test){
         var server = new RAIServer();
         server.listen(PORT_NUMBER, function(err){
@@ -39,7 +49,7 @@ exports["General tests"] = {
         test.expect(3);
         server.listen(PORT_NUMBER, function(err){
             
-            server.on("connection", function(socket){
+            server.on("connect", function(socket){
                 test.ok(socket, "Client connected");
                 
                 socket.on("end", function(){
@@ -67,7 +77,7 @@ exports["General tests"] = {
         test.expect(4);
         server.listen(PORT_NUMBER, function(err){
             
-            server.on("connection", function(socket){
+            server.on("connect", function(socket){
                 test.ok(socket, "Client connected");
                 
                 socket.on("end", function(){
@@ -98,7 +108,7 @@ exports["General tests"] = {
         var server = new RAIServer();
         server.listen(PORT_NUMBER, function(err){
             
-            server.on("connection", function(socket){
+            server.on("connect", function(socket){
                 
                 socket.send("HELLO");
 
@@ -131,7 +141,7 @@ exports["Secure connection"] = {
             
             test.expect(2);
             
-            server.on("connection", function(socket){
+            server.on("connect", function(socket){
                 
                 socket.startTLS();
                 socket.on("tls", function(){
@@ -174,7 +184,7 @@ exports["Secure connection"] = {
             
             test.expect(2);
             
-            server.on("connection", function(socket){
+            server.on("connect", function(socket){
                 
                 socket.startTLS(function(){
                     test.ok(1, "Secure connection opened");
@@ -220,7 +230,7 @@ exports["Secure connection"] = {
             
             test.expect(2);
             
-            server.on("connection", function(socket){
+            server.on("connect", function(socket){
                 
                 socket.on("command", function(command){
                     if(command == "STARTTLS"){
@@ -273,6 +283,44 @@ exports["Secure connection"] = {
             });
 
         });
+    },
+    "STARTTLS on secure server fails":  function(test){
+        var server = new RAIServer({secureConnection: true});
+        server.listen(PORT_NUMBER, function(err){
+            
+            test.expect(2);
+            server.on("connect", function(socket){
+                
+                socket.on("error", function(err){
+                    test.ok(err);
+                    socket.end();
+                    server.end(function(){
+                        test.done();
+                    });
+                });
+                
+                socket.on("command", (function(command){
+                    process.nextTick(socket.startTLS.bind(socket, function(){
+                        test.ok(false, "Secure connection opened"); // should not occur
+                        server.end(function(){
+                            test.done();
+                        });
+                    }));
+                    
+                }).bind(this));
+                
+                socket.on("tls", function(){
+                    test.ok(0, "Should not occur");
+                });
+                
+            });
+            
+            var client = tlslib.connect(PORT_NUMBER, function(){
+                test.ok(true);
+                client.write("HELLO!\r\n");
+            });
+
+        });
     }
 };
 
@@ -281,7 +329,7 @@ exports["Client commands"] = {
         var server = new RAIServer();
         server.listen(PORT_NUMBER, function(err){
             
-            server.on("connection", function(socket){
+            server.on("connect", function(socket){
                 
                 socket.on("command", function(command, payload){
                     test.equal(command, "STATUS");
@@ -307,7 +355,7 @@ exports["Client commands"] = {
         var server = new RAIServer();
         server.listen(PORT_NUMBER, function(err){
             
-            server.on("connection", function(socket){
+            server.on("connect", function(socket){
                 
                 socket.on("command", function(command, payload){
                     test.equal(command, "MAIL");
@@ -338,7 +386,7 @@ exports["Data mode"] = {
             datapayload = "tere\r\nvana kere";
         server.listen(PORT_NUMBER, function(err){
             
-            server.on("connection", function(socket){
+            server.on("connect", function(socket){
                 
                 socket.startDataMode();
 
@@ -374,7 +422,7 @@ exports["Data mode"] = {
             fullpayload = datapayload+"\r\n.\r\n";
         server.listen(PORT_NUMBER, function(err){
             
-            server.on("connection", function(socket){
+            server.on("connect", function(socket){
                 
                 socket.startDataMode();
 
@@ -416,7 +464,7 @@ exports["Pipelining support"] = {
             
             test.expect(8);
             
-            server.on("connection", function(socket){
+            server.on("connect", function(socket){
                 
                 socket.on("command", function(command, payload){
                     if(command == "STATUS"){
@@ -466,7 +514,7 @@ exports["Timeout tests"] = {
         test.expect(3);
         server.listen(PORT_NUMBER, function(err){
             
-            server.on("connection", function(socket){
+            server.on("connect", function(socket){
                 test.ok(socket, "Client connected");
                 
                 socket.on("timeout", function(){
@@ -494,7 +542,7 @@ exports["Timeout tests"] = {
             
             test.expect(3);
             
-            server.on("connection", function(socket){
+            server.on("connect", function(socket){
                 
                 socket.startTLS();
                 socket.on("tls", function(){
