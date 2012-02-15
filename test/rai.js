@@ -8,8 +8,8 @@ var RAIServer = require("../lib/rai").RAIServer,
 var PORT_NUMBER = 8397;
 
 // monkey patch net and tls to support nodejs 0.4
-if(!net.connect && net.createConnection){
-    net.connect = net.createConnection;
+if(!netlib.connect && netlib.createConnection){
+    netlib.connect = netlib.createConnection;
 }
 
 if(!tlslib.connect && tlslib.createConnection){
