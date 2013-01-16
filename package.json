@@ -1,7 +1,7 @@
 {
     "name": "rai",
     "description": "Request-Answer-Interface for generating text based command servers (SMTP, POP etc)",
-    "version": "0.1.6",
+    "version": "0.1.7",
     "author" : "Andris Reinman",
     "maintainers":[
         {
@@ -14,7 +14,7 @@
         "url" : "http://github.com/andris9/rai.git"
     },
     "scripts":{
-        "test": "node ./run_tests.js"
+        "test": "nodeunit test"
     },
     "main" : "./lib/rai",
     "licenses" : [
