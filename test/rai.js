@@ -1,3 +1,5 @@
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+
 var RAIServer = require("../lib/rai").RAIServer,
     runClientMockup = require("../lib/rai").runClientMockup,
     testCase = require('nodeunit').testCase,
